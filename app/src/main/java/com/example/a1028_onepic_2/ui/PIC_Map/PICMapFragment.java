@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.util.Log;
 
@@ -159,13 +160,15 @@ public class PICMapFragment extends Fragment
     @Override
     public boolean onMarkerClick(Marker marker){
         final Dialog image_dialog = new Dialog(getActivity(),R.style.image_dialog_style);
+//        ImageDialog imageDialog = new ImageDialog(getActivity(), marker.get);
         image_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         image_dialog.setContentView(R.layout.image_dialog);
         image_dialog.setTitle("Custom dialog");
-        TextView tv = (TextView) image_dialog.findViewById(R.id.image_dialog_text);
-        tv.setText("Hello. This is a Custom Dialog !");
-
+        ImageView dialogImage = (ImageView)image_dialog.findViewById(R.id.dialog_image);
+//        TextView tv = (TextView) image_dialog.findViewById(R.id.image_dialog_text);
+//        tv.setText("Hello. This is a Custom Dialog !");
+        dialogImage.setImageResource(R.drawable.image_1);
         // 다이얼로그 뒷 배경 검게 변하지 않도록!
         image_dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 

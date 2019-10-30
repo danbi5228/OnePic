@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -41,11 +43,13 @@ public class TAGFeedFragment extends Fragment
                 ViewModelProviders.of(this).get(TAGFeedViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_tagfeed, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
+        final TextView textView = root.findViewById(R.id.tmp_tagfeed_title);
         TAGFeedViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+                RotateAnimation rotate = (RotateAnimation) AnimationUtils.loadAnimation(getContext(), R.anim.rotate_tagfeed_title);
+                textView.setAnimation(rotate);
             }
         });
         ImageView tmp_v = root.findViewById(R.id.tmp_searchView);

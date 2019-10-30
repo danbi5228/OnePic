@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="dialog_colorViolet">#4c3692</color>
     <color name="white_background">#ffffffff</color>
+    <color name="dialog_colorCharcoal">#3f4949</color>
 </resources>
 
 

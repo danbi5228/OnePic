@@ -11,7 +11,7 @@ public class TAGFeedViewModel extends ViewModel {
     public TAGFeedViewModel() {
 
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("IN PARIS");
     }
 
     public LiveData<String> getText() {
