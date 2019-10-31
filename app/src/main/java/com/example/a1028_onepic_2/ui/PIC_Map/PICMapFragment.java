@@ -3,6 +3,7 @@ package com.example.a1028_onepic_2.ui.PIC_Map;
 import android.content.res.Resources;
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -126,30 +127,31 @@ public class PICMapFragment extends Fragment
             Log.e(TAG, "Can't find style. Error: ", e);
         }
 
-        LatLng SEOUL1 = new LatLng(37.56, 126.97);
-        LatLng SEOUL2 = new LatLng(37.548927, 126.965692);
-        LatLng SEOUL3 = new LatLng(37.561728, 126.987228);
-        LatLng SEOUL4 = new LatLng(37.548303, 126.963895);
-        LatLng SEOUL5 = new LatLng(37.557960, 126.982323);
+        LatLng Lodon = new LatLng(51.5287718, -0.2416787);
+        LatLng Paris = new LatLng(48.8589101, 2.3120407);
+        LatLng Roma = new LatLng(41.9101776, 12.4659588);
+        LatLng Brussel = new LatLng(50.855024, 4.3403707);
+        LatLng Wem = new LatLng(51.5548788, -0.3162034);
         googleMap.setPadding(0, 0, 0, 150);
 
-        googleMap.addMarker(new MarkerOptions()
-                .position(SEOUL1)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_tmp_wantpic)));
-        googleMap.addMarker(new MarkerOptions()
-                .position(SEOUL2)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_tmp_wantpic)));
-        googleMap.addMarker(new MarkerOptions()
-                .position(SEOUL3)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_tmp_wantpic)));
-        googleMap.addMarker(new MarkerOptions()
-                .position(SEOUL4)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_tmp_wantpic)));
-        googleMap.addMarker(new MarkerOptions()
-                .position(SEOUL5)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher_tmp_wantpic)));
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL1));
+        googleMap.addMarker(new MarkerOptions()
+                .position(Lodon)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.image_1_icon)));
+        googleMap.addMarker(new MarkerOptions()
+                .position(Paris)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.image_2_icon)));
+        googleMap.addMarker(new MarkerOptions()
+                .position(Roma)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.image_3_icon)));
+        googleMap.addMarker(new MarkerOptions()
+                .position(Brussel)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.image_4_icon)));
+        googleMap.addMarker(new MarkerOptions()
+                .position(Wem)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.image_5_icon)));
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Lodon));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
 
         googleMap.setOnMarkerClickListener(this);
